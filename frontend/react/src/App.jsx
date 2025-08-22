@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './pages/Header'
 import { useKeycloak } from '@react-keycloak/web'
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieListPage from './pages/MovieListPage'
 
 function App() {

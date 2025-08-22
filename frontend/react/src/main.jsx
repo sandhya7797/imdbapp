@@ -12,6 +12,7 @@ const keycloak = new Keycloak({
   clientId: 'demo'
 })
 
+//ReactKeycloakProvider provides keycloak instance and authentication state to all components in this app.
 createRoot(document.getElementById('root')).render(
     <ReactKeycloakProvider
       authClient={keycloak}

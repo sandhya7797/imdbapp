@@ -1,16 +1,28 @@
 import { useKeycloak } from '@react-keycloak/web'
+import { useState } from 'react'
 import "./header.css"
 import MovieListPage from './MovieListPage';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-    const { keycloak, initialized } = useKeycloak();
+    const { keycloak, initialized } = useKeycloak();/* useKeycloak is a custom react-hook provided by keycloak integration library */
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
-        <div className="header-content">
+        <div className="nav-bar">
             <div className="imdb-logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"/>
+            </div>
+            <div className="menu">
+                <button onClick={toggleMenu}>
+                    <i className="fa-solid fa-bars"></i>
+                </button>{' '}
+                <span>Menu</span>
             </div>
             <div className="search-box">
                 <input type="text"/>
@@ -46,7 +58,11 @@ const Header = () => {
                 
             </div>
             <div className="language">
-                <button>EN</button>
+                <select defaultValue="en">
+                 <option value="en">EN</option>
+                 <option value="es">ES</option>
+                 <option value="er">ER</option>
+                </select>
             </div>
         </div>
     );

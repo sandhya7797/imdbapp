@@ -1,4 +1,9 @@
-.header-content {
+body {
+    padding : 0;
+    margin : 0;
+}
+
+.nav-bar {
     background-color: #121212;
     color:white;
     top:0;
@@ -8,44 +13,56 @@
     height : 55px;
     display : flex;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
 }
 
-.header-content .imdb-logo img {
+.nav-bar .imdb-logo img {
     width: 64px;
     height: 30px;
-    margin : 10px 10px;
+    margin-right:20px;
 }
 
-.header-content .search-box input {
+.nav-bar .menu span {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.nav-bar .menu button:hover {
+    background-color:#333;
+}
+
+.nav-bar .search-box input {
     width : 605px;
     height: 28px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 2px solid #ccc;
     margin : 10px 10px;
 }
 
-.header-content .search-box input:focus,
-.header-content .movies button:focus,
-.header-content .watchlist button:focus,
-.header-content .signin button:focus,
-.header-content .language button:focus {
+.nav-bar .search-box input:focus,
+.nav-bar .movies button:focus,
+.nav-bar .watchlist button:focus,
+.nav-bar .signin button:focus,
+.nav-bar .language select:focus {
     border-color: #FFD700;;
     outline: none;
 }
 
-.header-content .movies button,
-.header-content .watchlist button,
-.header-content .signin button,
-.header-content .language button {
+.nav-bar .movies button,
+.nav-bar .watchlist button,
+.nav-bar .signin button,
+.nav-bar .language select {
     height : 35px;
-    padding : 5px 10px;
     font-weight: bold;
     font-style: initial;
-    border-radius: 15px;
     background-color: #121212;
     color : white;
     font-size: 17.5px;
-    margin : 10px 10px;
+    gap : 20px;
+    margin-left : auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
