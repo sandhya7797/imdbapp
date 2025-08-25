@@ -8,6 +8,7 @@ const Header = () => {
 
     const { keycloak, initialized } = useKeycloak();/* useKeycloak is a custom react-hook provided by keycloak integration library */
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const Logo_URL = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png";
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -16,7 +17,9 @@ const Header = () => {
     return (
         <div className="nav-bar">
             <div className="imdb-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"/>
+                <Link to="/">
+                    <img src={Logo_URL} alt="IMDB Logo"/>
+                </Link>
             </div>
             <div className="menu">
                 <button onClick={toggleMenu}>
