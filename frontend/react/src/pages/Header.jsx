@@ -24,11 +24,24 @@ const Header = () => {
             <div className="menu">
                 <button onClick={toggleMenu}>
                     <i className="fa-solid fa-bars"></i>
-                </button>{' '}
-                <span>Menu</span>
+                    Menu
+                </button>
             </div>
-            <div className="search-box">
-                <input type="text"/>
+            <div className="search-container">
+                <div className="search-dropdown">
+                    <select>
+                        <option>All</option>
+                        <option>Titles</option>
+                        <option>TV Episodes</option>
+                        <option>Celebs</option>
+                        <option>Keywords</option>
+                    </select>
+                    <i className="fa-solid fa-caret-down"></i>
+                </div>
+                <div className="search-input">
+                    <input type="text"/>
+                    <i className="fa-solid fa-search search-icon"></i>
+                </div>
             </div>
             <div className="movies">
                 <Link to="/movies">
@@ -36,7 +49,15 @@ const Header = () => {
                 </Link>
             </div>
             <div className="watchlist">
-                <button>+Watchlist</button>
+                <Link to="/addToWatchlist">
+                <button>
+                    <div className="watchlist-icon-container">
+                        <i className="fa-solid fa-bookmark"></i>
+                        <i className="fa-solid fa-plus"></i>
+                    </div>
+                    <span>Watchlist</span>
+                </button>
+                </Link>
             </div>
             {/* Sign in button show only when user not authenticated */} 
             <div className="signin">
@@ -66,6 +87,7 @@ const Header = () => {
                  <option value="es">ES</option>
                  <option value="er">ER</option>
                 </select>
+                <i className="fa-solid fa-caret-down"></i>
             </div>
         </div>
     );

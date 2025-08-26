@@ -29,7 +29,7 @@ const Movie = ({movie}) => {
             </div>
             <h3>{title}</h3>
             <div className="watch-options">
-                <button>Watch options</button>
+                <button>+WatchList</button>
             </div>
             <div className="trailer">
                 <button><FontAwesomeIcon icon={faPlay} className="fa-icon" />Trailer</button>
